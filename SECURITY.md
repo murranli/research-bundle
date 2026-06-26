@@ -1,21 +1,21 @@
-# Security and Privacy
+# 安全与隐私
 
-This repository is intended to publish skill instructions and helper scripts, not runtime secrets.
+本仓库用于发布技能说明和辅助脚本，不用于保存运行时密钥、登录态或真实调研资料。
 
-Do not commit:
+请不要提交：
 
-- `.entropy/` run directories from real research sessions
-- login cookies, browser profiles, session files, or platform tokens
-- `.env` files or API keys
-- raw retrieval dumps that contain temporary source URLs or private account state
-- personal documents used as source material unless they are explicitly public
+- 真实研究任务生成的 `.entropy/` 运行目录
+- 登录 Cookie、浏览器 profile、session 文件或平台 token
+- `.env` 文件、API key、访问令牌或其他凭证
+- 包含临时 URL、会话参数或账号状态的原始检索返回
+- 未经确认可公开的个人文档、客户资料或内部材料
 
-The installer copies only the skill bundle directories. It does not configure retrieval accounts, browser login state, API keys, or agent permissions.
+安装脚本只复制技能包目录，不会配置检索账号、浏览器登录态、API key 或 Agent 权限。
 
-If a secret is accidentally pushed to a public remote:
+如果你误把密钥或敏感资料推送到了公开远程仓库：
 
-1. Revoke or rotate the secret immediately.
-2. Remove it from the repository.
-3. Rewrite public history only after confirming all collaborators understand the impact.
+1. 立即撤销或轮换相关密钥。
+2. 从仓库中删除敏感内容。
+3. 如需重写公开历史，先确认协作者理解影响，再执行历史清理。
 
-Report security issues privately to the repository owner.
+安全问题请私下联系仓库维护者。

@@ -1,4 +1,4 @@
-# 信息降熵调研系统 v2.0 · Skill Bundle
+# 信息降熵调研系统 v2.0 · 技能包本体
 
 这是 Research Bundle 的技能包本体。公开入口与安装说明见仓库根目录 `README.md`。
 

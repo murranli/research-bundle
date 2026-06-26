@@ -9,12 +9,12 @@ SOURCE_DIR=""
 
 usage() {
   cat <<'EOF'
-Install Research Bundle into local Agent Skills directories.
+将 Research Bundle 安装到本地 Agent Skills 目录。
 
-Usage:
+用法：
   install.sh [--target DIR] [--source DIR] [--repo URL] [--ref REF] [--dry-run]
 
-Examples:
+示例：
   curl -fsSL https://raw.githubusercontent.com/murranli/research-bundle/main/install.sh | bash
   curl -fsSL https://raw.githubusercontent.com/murranli/research-bundle/main/install.sh | bash -s -- --target "$HOME/.claude/skills"
   ./install.sh --target "$HOME/.codex/skills"
@@ -24,22 +24,22 @@ EOF
 while [ "$#" -gt 0 ]; do
   case "$1" in
     --target)
-      [ "$#" -ge 2 ] || { echo "Missing value for --target" >&2; exit 2; }
+      [ "$#" -ge 2 ] || { echo "--target 缺少目录参数" >&2; exit 2; }
       TARGETS+=("$2")
       shift 2
       ;;
     --source)
-      [ "$#" -ge 2 ] || { echo "Missing value for --source" >&2; exit 2; }
+      [ "$#" -ge 2 ] || { echo "--source 缺少目录参数" >&2; exit 2; }
       SOURCE_DIR="$2"
       shift 2
       ;;
     --repo)
-      [ "$#" -ge 2 ] || { echo "Missing value for --repo" >&2; exit 2; }
+      [ "$#" -ge 2 ] || { echo "--repo 缺少仓库地址" >&2; exit 2; }
       REPO_URL="$2"
       shift 2
       ;;
     --ref)
-      [ "$#" -ge 2 ] || { echo "Missing value for --ref" >&2; exit 2; }
+      [ "$#" -ge 2 ] || { echo "--ref 缺少分支或标签名" >&2; exit 2; }
       REF="$2"
       shift 2
       ;;
@@ -52,7 +52,7 @@ while [ "$#" -gt 0 ]; do
       exit 0
       ;;
     *)
-      echo "Unknown argument: $1" >&2
+      echo "未知参数：$1" >&2
       usage >&2
       exit 2
       ;;
@@ -96,21 +96,21 @@ trap cleanup EXIT
 if [ -z "$SOURCE_DIR" ]; then
   tmp_dir="$(mktemp -d)"
   if command -v git >/dev/null 2>&1; then
-    log "Downloading Research Bundle from $REPO_URL ($REF)..."
+    log "正在从 $REPO_URL 下载 Research Bundle（$REF）..."
     git clone --depth 1 --branch "$REF" "$REPO_URL" "$tmp_dir/repo" >/dev/null
   elif command -v curl >/dev/null 2>&1 && command -v tar >/dev/null 2>&1; then
-    log "Downloading Research Bundle archive from GitHub ($REF)..."
+    log "正在从 GitHub 下载 Research Bundle 压缩包（$REF）..."
     curl -fsSL "https://github.com/murranli/research-bundle/archive/refs/heads/$REF.tar.gz" | tar -xz -C "$tmp_dir"
     mv "$tmp_dir"/research-bundle-* "$tmp_dir/repo"
   else
-    echo "Install requires git, or curl + tar." >&2
+    echo "安装需要 git，或 curl + tar。" >&2
     exit 1
   fi
   SOURCE_DIR="$tmp_dir/repo/entropy-research-bundle"
 fi
 
 if [ ! -d "$SOURCE_DIR" ]; then
-  echo "Cannot find bundle source directory: $SOURCE_DIR" >&2
+  echo "找不到技能包源目录：$SOURCE_DIR" >&2
   exit 1
 fi
 
@@ -121,9 +121,9 @@ fi
 
 if [ "${#TARGETS[@]}" -eq 0 ]; then
   cat >&2 <<'EOF'
-No supported Agent Skills directory was found.
+没有找到支持的 Agent Skills 目录。
 
-Create one or pass an explicit target, for example:
+请先创建目录，或用 --target 明确指定，例如：
   bash install.sh --target "$HOME/.claude/skills"
   bash install.sh --target "$HOME/.codex/skills"
 EOF
@@ -143,7 +143,7 @@ items=(
 )
 
 for target in "${TARGETS[@]}"; do
-  log "Installing Research Bundle into $target"
+  log "正在安装 Research Bundle 到 $target"
   run mkdir -p "$target"
   stamp="$(date +%Y%m%d%H%M%S)"
 
@@ -151,12 +151,12 @@ for target in "${TARGETS[@]}"; do
     src="$SOURCE_DIR/$item"
     dst="$target/$item"
     if [ ! -e "$src" ]; then
-      echo "Missing bundle item: $src" >&2
+      echo "技能包缺少目录：$src" >&2
       exit 1
     fi
     if [ -e "$dst" ]; then
       backup="$target/.research-bundle-backup-$stamp/$item"
-      log "Backing up existing $dst to $backup"
+      log "发现已有目录，先备份：$dst -> $backup"
       run mkdir -p "$(dirname "$backup")"
       run mv "$dst" "$backup"
     fi
@@ -164,5 +164,5 @@ for target in "${TARGETS[@]}"; do
   done
 done
 
-log "Research Bundle installed."
-log "Restart your agent if it does not detect new skills automatically, then invoke: entropy-research"
+log "Research Bundle 安装完成。"
+log "如果你的 Agent 没有自动发现新技能，请重启或刷新它，然后调用：entropy-research"

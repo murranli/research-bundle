@@ -1,6 +1,10 @@
 ---
-name: entropy-research
+name: research
+triggers:
+  - "research"
+  - "使用 research"
 description: >-
+  触发命令：使用 research，<你的调研问题>。例如：使用 research，评估小红书在本地生活搜索和决策场景是否有产品机会。
   信息降熵调研系统的主线编排器。把一句话预研需求，沿"目的判断→拆解→检索策略→检索执行→内容审计→报告撰写→报告生成→复盘交付"
   跑成一份带信源、可追溯的分析报告，应用于"商业投资→产品分析→设计落地"。
   只要用户提出调研/预研/竞品分析/产品分析/市场研究/可行性判断/"帮我研究/对比/评估某产品·公司·行业"
@@ -8,7 +12,7 @@ description: >-
   它通过状态文件契约调度 7 个子 skill；实际检索工具由用户的运行环境决定，可使用 Agent-Reach 或其他等价工具。
 ---
 
-# 信息降熵调研系统 · 主线编排器（v2.0）
+# research · 信息降熵调研系统主线编排器（v2.0）
 
 你是这条调研流水线的**指挥**。你不亲自做拆解/检索/写报告，而是：判断入口 → 按状态机依次唤起子 skill → 守住审计回环与预算边界 → 最终交付。子 skill 之间不靠对话传话，全部通过**状态文件契约**在磁盘交接。
 
@@ -30,13 +34,13 @@ description: >-
 
 | stage | 子 skill（bundle 内同级目录） | 读入 → 写出（产物 key） |
 |---|---|---|
-| intent + decompose | `goal-decompose` | 原始诉求 → `intent` + `questions` |
-| strategy | `search-strategy` | `questions` + `channels` → `strategy` |
-| retrieval | `retrieval-exec` | `strategy` → `retrieval_dir`（逐条返回） |
-| audit | `content-audit` | `retrieval_dir` → `evidence` + 审计裁决 |
-| compose | `report-compose` | `evidence` → `outline` |
-| render | `report-render` | `outline` → `report_html` |
-| deliver | `review-deliver` | 全程 → `deliverables/`（md + pdf + html） |
+| intent + decompose | `goal-decompose`（`research/目标拆解`） | 原始诉求 → `intent` + `questions` |
+| strategy | `search-strategy`（`research/检索策略`） | `questions` + `channels` → `strategy` |
+| retrieval | `retrieval-exec`（`research/检索执行`） | `strategy` → `retrieval_dir`（逐条返回） |
+| audit | `content-audit`（`research/内容审计`） | `retrieval_dir` → `evidence` + 审计裁决 |
+| compose | `report-compose`（`research/报告撰写`） | `evidence` → `outline` |
+| render | `report-render`（`research/报告生成`） | `outline` → `report_html` |
+| deliver | `review-deliver`（`research/复盘交付`） | 全程 → `deliverables/`（md + pdf + html） |
 
 每个子 skill 都是**可独立触发**的：用户直接说"帮我把这个目标拆成子问题"会单独唤起 `goal-decompose`。子 skill 因此有**两种模式**——
 - **独立模式**：用户直接调用，没有 run 上下文。就地完成、直接把结果给用户（或落一个文件），不要求建状态文件。

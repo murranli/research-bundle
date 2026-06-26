@@ -132,7 +132,7 @@ fi
 
 items=(
   "_shared"
-  "entropy-research"
+  "research"
   "goal-decompose"
   "search-strategy"
   "retrieval-exec"
@@ -142,10 +142,24 @@ items=(
   "review-deliver"
 )
 
+legacy_items=(
+  "entropy-research"
+)
+
 for target in "${TARGETS[@]}"; do
   log "正在安装 Research Bundle 到 $target"
   run mkdir -p "$target"
   stamp="$(date +%Y%m%d%H%M%S)"
+
+  for item in "${legacy_items[@]}"; do
+    legacy="$target/$item"
+    if [ -e "$legacy" ]; then
+      backup="$target/.research-bundle-backup-$stamp/$item"
+      log "发现旧版目录，先备份：$legacy -> $backup"
+      run mkdir -p "$(dirname "$backup")"
+      run mv "$legacy" "$backup"
+    fi
+  done
 
   for item in "${items[@]}"; do
     src="$SOURCE_DIR/$item"
@@ -161,8 +175,10 @@ for target in "${TARGETS[@]}"; do
       run mv "$dst" "$backup"
     fi
     run cp -R "$src" "$dst"
+    run find "$dst" -name "__pycache__" -type d -prune -exec rm -rf "{}" "+"
+    run find "$dst" -name "*.pyc" -type f -delete
   done
 done
 
 log "Research Bundle 安装完成。"
-log "如果你的 Agent 没有自动发现新技能，请重启或刷新它，然后调用：entropy-research"
+log "如果你的 Agent 没有自动发现新技能，请重启或刷新它，然后调用：research"

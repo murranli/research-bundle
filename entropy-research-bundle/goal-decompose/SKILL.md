@@ -1,10 +1,14 @@
 ---
 name: goal-decompose
+triggers:
+  - "research/目标拆解"
+  - "使用 research/目标拆解"
 description: >-
+  触发命令：使用 research/目标拆解，<你的调研问题>。
   目标拆解：把模糊的调研诉求定位为"研究对象×研究目的"靶向坐标与一句标准陈述句，再按 MECE 与
   "目的×维度分析模型矩阵"降维成一组可检索的子问题（每条带反正条件、不预设立场）。
   当用户给出预研/调研诉求需要厘清边界与子问题，或直接说"帮我把这个目标拆成可调研的子问题/确定分析框架/
-  定位研究坐标"时使用；也作为 entropy-research 主线 intent+decompose 两段的执行体。
+  定位研究坐标"时使用；也作为 research 主线 intent+decompose 两段的执行体。
 ---
 
 # 目标拆解（intent + decompose）
@@ -14,7 +18,7 @@ description: >-
 ## 两种运行模式（先判断你在哪种）
 
 - **独立模式**：用户直接找你拆目标，没有 run 上下文。就地完成两阶段，把两段 JSON 结果直接回给用户，**不建状态文件**。
-- **编排模式**：被 entropy-research 唤起，会明确告诉你 `run_id` 与 `root`。此时严格走《状态文件契约》——读 manifest、写产物、推进 stage、写审计日志。
+- **编排模式**：被 research 主线唤起，会明确告诉你 `run_id` 与 `root`。此时严格走《状态文件契约》——读 manifest、写产物、推进 stage、写审计日志。
 
 契约与脚本在 bundle 的 `../_shared/`（先读 `../_shared/state-contract.md`）。下文命令以编排模式为准；独立模式跳过所有 `state_io.py` 调用、改为直接输出。
 

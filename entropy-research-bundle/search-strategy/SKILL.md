@@ -1,9 +1,13 @@
 ---
 name: search-strategy
+triggers:
+  - "research/检索策略"
+  - "使用 research/检索策略"
 description: >-
+  触发命令：使用 research/检索策略，<子问题或调研问题>。
   搜索策略：把子问题翻译成可执行的检索方案——做概念泛化、框定时空、判话题类型(A/B/C)、生成宽搜/精搜/证伪式检索式，
   并结合当前可用检索渠道，产出"子问题→渠道→检索命令"的映射，为检索执行做好准备。
-  当需要为一组调研子问题设计检索策略/选择信源渠道/准备检索命令时使用；也作为 entropy-research 主线 strategy 段、
+  当需要为一组调研子问题设计检索策略/选择信源渠道/准备检索命令时使用；也作为 research 主线 strategy 段、
   以及内容审计判 insufficient 后回环补检索的执行体。
 ---
 
@@ -13,7 +17,7 @@ description: >-
 
 ## 两种运行模式
 - **独立模式**：用户直接给一组子问题求检索策略，无 run 上下文。就地产出计划直接回给用户，不建状态文件；渠道按"假设常见渠道可用"给，并提示真实可用性以运行环境的 doctor/渠道快照为准。
-- **编排模式**：被 entropy-research 唤起（给 `run_id`/`root`）。严格走契约。
+- **编排模式**：被 research 主线唤起（给 `run_id`/`root`）。严格走契约。
 
 ## 输入（编排模式）
 - `python3 ../_shared/state_io.py get <run_id> --root <root>` 取 manifest，用其 `scope`、`channels`（三档快照）、`budget`、`audit`。

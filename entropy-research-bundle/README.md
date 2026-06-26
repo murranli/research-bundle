@@ -7,7 +7,7 @@
 ## 结构
 
 ```text
-entropy-research/      主线编排器：调度其余 7 个 skill
+research/              主线编排器：调度其余 7 个 skill
 goal-decompose/        目标拆解：intent + decompose
 search-strategy/       搜索策略：strategy
 retrieval-exec/        检索执行：retrieval

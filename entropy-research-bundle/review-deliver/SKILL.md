@@ -1,8 +1,12 @@
 ---
 name: review-deliver
+triggers:
+  - "research/复盘交付"
+  - "使用 research/复盘交付"
 description: >-
+  触发命令：使用 research/复盘交付，<run_id 或已有调研产物>。
   复盘与交付子 skill（旁路 + 主线 stage: deliver）。全程消费审计日志形成可回溯的工作流复盘，
-  并在收尾交付三件套：复盘 md、成品 pdf、GitHub Pages 可预览 html。由 entropy-research 主线在 deliver 阶段唤起。
+  并在收尾交付三件套：复盘 md、成品 pdf、GitHub Pages 可预览 html。由 research 主线在 deliver 阶段唤起。
 ---
 
 # 复盘与交付（deliver）

@@ -1,8 +1,12 @@
 ---
 name: report-render
+triggers:
+  - "research/报告生成"
+  - "使用 research/报告生成"
 description: >-
+  触发命令：使用 research/报告生成，<报告大纲或 run_id>。
   报告生成子 skill（主线 stage: render）。把内容大纲渲染为美观的 HTML，遵循一份轻量 Design System
-  （字体/颜色/间距等基础约束）。由 entropy-research 主线在 render 阶段唤起。
+  （字体/颜色/间距等基础约束）。由 research 主线在 render 阶段唤起。
 ---
 
 # 报告生成（render）

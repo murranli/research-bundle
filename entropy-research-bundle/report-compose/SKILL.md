@@ -1,10 +1,14 @@
 ---
 name: report-compose
+triggers:
+  - "research/报告撰写"
+  - "使用 research/报告撰写"
 description: >-
+  触发命令：使用 research/报告撰写，<证据、结论或约束>。
   报告撰写：把带源证据组织成观点先行的报告大纲——每章一个被提炼的核心观点 + 论证支撑，事实/推断分明、严守溯源，
   信源不足处留白而非堆砌，结论结构依课题性质自定义。只管内容组织与逻辑，不做美化。
   当需要把一批证据/调研结论组织成有观点、有论证、可读的报告结构时使用；
-  作为 entropy-research 主线 compose 段的执行体；拿约束直接做设计时也可作入口。
+  作为 research 主线 compose 段的执行体；拿约束直接做设计时也可作入口。
 ---
 
 # 报告撰写（compose）
@@ -13,7 +17,7 @@ description: >-
 
 ## 两种运行模式
 - **独立模式**：用户直接丢一批证据/结论要你组织成报告结构。就地产出大纲回给用户。
-- **编排模式**：被 entropy-research 唤起（给 `run_id`/`root`），严格走契约。
+- **编排模式**：被 research 主线唤起（给 `run_id`/`root`），严格走契约。
 
 ## 输入（编排模式）
 - 读证据：`state_io.py read-artifact <run_id> evidence`。

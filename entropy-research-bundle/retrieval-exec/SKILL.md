@@ -1,9 +1,13 @@
 ---
 name: retrieval-exec
+triggers:
+  - "research/检索执行"
+  - "使用 research/检索执行"
 description: >-
+  触发命令：使用 research/检索执行，<检索策略或查询列表>。
   检索执行：把搜索策略里的渠道计划逐条对着当前检索工具坐实成真命令并执行，每次返回独立留存为带源记录；
   边检索边做两层信源粗筛，按质量与来源信度分级，每个子问题维度只深读 2 个源取回正文，全程受预算硬上限约束。
-  当需要按既定检索策略真正去各渠道抓取信息、筛选信源并取回正文时使用；作为 entropy-research 主线 retrieval 段的执行体。
+  当需要按既定检索策略真正去各渠道抓取信息、筛选信源并取回正文时使用；作为 research 主线 retrieval 段的执行体。
 ---
 
 # 检索执行（retrieval）
@@ -12,7 +16,7 @@ description: >-
 
 ## 两种运行模式
 - **独立模式**：用户直接给一份渠道计划/一组查询要你去抓。就地执行、把结果整理回给用户。
-- **编排模式**：被 entropy-research 唤起（给 `run_id`/`root`），严格走契约：读 strategy、逐条落 `03_retrieval/rNNNN.json`、累加预算、收尾推进。
+- **编排模式**：被 research 主线唤起（给 `run_id`/`root`），严格走契约：读 strategy、逐条落 `03_retrieval/rNNNN.json`、累加预算、收尾推进。
 
 ## 输入（编排模式）
 - 读 strategy：`python3 ../_shared/state_io.py read-artifact <run_id> strategy --root <root>`。

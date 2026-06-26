@@ -4,6 +4,8 @@
 
 这是一个 **Agent Skills 风格的技能组合**。它只提供技能说明、状态契约和本地辅助脚本；使用哪个 Agent、哪个模型、哪个浏览器、哪个检索工具，由用户自己决定。
 
+[![research-orchestration-flow.jpg](https://i.postimg.cc/J0kmXgTJ/research-orchestration-flow.jpg)](https://postimg.cc/30YP5LQJ)
+
 ## 一条命令安装
 
 ```bash

@@ -1,0 +1,15 @@
+# Local OS/editor noise
+.DS_Store
+__pycache__/
+*.py[cod]
+*.log
+
+# Local research runs can contain private prompts, source dumps, platform URLs,
+# account state, and other runtime-only artifacts. Keep sanitized examples under
+# entropy-research-bundle/examples/ instead.
+.entropy/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example

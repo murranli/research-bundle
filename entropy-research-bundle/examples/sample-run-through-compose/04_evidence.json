@@ -1,0 +1,29 @@
+{
+  "round": 1,
+  "evidence": [
+    {"eid": "e1", "qid": "q2", "claim": "标准化测试下理想唤醒时延约0.48s、问界约0.52s，差异微小", "type": "fact", "confidence": "high", "single_source": false, "contradicts": [],
+     "sources": [
+       {"req_id": "r0004", "url": "https://auto-media.com/voice-2025", "source_type": "权威二手", "locus": "0.48s/0.52s"},
+       {"req_id": "r0003", "url": "https://xhs/note/aaa", "source_type": "社群", "locus": "理想响应更快"}]},
+    {"eid": "e2", "qid": "q2", "claim": "多音区识别准确率两车均>95%，连续对话轮次问界略优", "type": "fact", "confidence": "medium", "single_source": true, "contradicts": [],
+     "sources": [{"req_id": "r0004", "url": "https://auto-media.com/voice-2025", "source_type": "权威二手", "locus": ">95%"}]},
+    {"eid": "e3", "qid": "q1", "claim": "两车座舱主控均为骁龙8295P；理想L9为5屏、问界M9为三联屏+HUD", "type": "fact", "confidence": "high", "single_source": true, "contradicts": [],
+     "sources": [{"req_id": "r0008", "url": "https://official/spec", "source_type": "一手", "locus": "8295P/5屏"}]},
+    {"eid": "e4", "qid": "q3", "claim": "理想三屏分工(仪表/中控/副驾)，副驾可独立投中控；问界增后排屏", "type": "fact", "confidence": "medium", "single_source": true, "contradicts": [],
+     "sources": [{"req_id": "r0006", "url": "https://bili/v/ddd", "source_type": "社群", "locus": "副驾独立投屏"}]}
+  ],
+  "coverage": [
+    {"qid": "q2", "status": "covered", "evidence": ["e1", "e2"], "note": "跨权威二手+社群双源，含可量化时延"},
+    {"qid": "q1", "status": "covered", "evidence": ["e3"], "note": "官方一手参数，单源但信度高，可接受"},
+    {"qid": "q3", "status": "partial", "evidence": ["e4"], "note": "仅单一社群源，缺跨屏流转的可量化指标(延迟/失败率)与官方/权威佐证"}
+  ],
+  "audit": {
+    "verdict": "insufficient",
+    "reasoning": "q2/q1 已 covered；q3(多屏交互)是设计借鉴的关键维度，却仅单一社群源、且缺可量化的跨屏流转数据，不足以支撑设计取舍。",
+    "scope_drift_check": "证据仍紧扣'指导我方车机交互设计'的原始诉求，未收缩为单车评测",
+    "single_source_warnings": ["e4(q3 仅 bilibili 社群源)", "e3(q1 官方单源，但信度高可接受)"],
+    "open_gaps": [
+      {"qid": "q3", "gap": "缺跨屏流转的可量化指标(延迟/成功率)与官方或权威二手佐证，仅有单一社群描述", "suggest_channels": ["youtube", "exa"]}
+    ]
+  }
+}

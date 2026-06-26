@@ -1,0 +1,40 @@
+{
+  "req_id": "r0002",
+  "qid": "q2",
+  "channel": "exa",
+  "op": "search",
+  "backend": "mcporter",
+  "cmd": "mcporter call exa search '理想L9 问界M9 车机语音助手 实测对比'",
+  "query": "理想L9 问界M9 车机语音助手 实测对比",
+  "fetched_at": "2026-06-25T21:36:33+08:00",
+  "raw": [
+    {
+      "title": "2025智能座舱语音交互横评（含理想/问界）",
+      "url": "https://auto-media.com/voice-2025",
+      "snippet": "对比唤醒/多音区/时延，附测试方法",
+      "date": "2025-12-10"
+    },
+    {
+      "title": "车机语音技术泛科普",
+      "url": "https://blog.x/voice",
+      "snippet": "无具体车型数据",
+      "date": "2024-06-01"
+    }
+  ],
+  "filter": {
+    "candidates": [
+      {
+        "url": "https://auto-media.com/voice-2025",
+        "direction_pass": true,
+        "quality_tier": "高",
+        "selected_for_read": true,
+        "reason": "权威二手横评，与社群源跨类型互补"
+      },
+      {
+        "url": "https://blog.x/voice",
+        "direction_pass": false,
+        "drop_reason": "泛科普且超期"
+      }
+    ]
+  }
+}

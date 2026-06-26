@@ -1,0 +1,12 @@
+{
+  "is_actionable": true,
+  "is_composite": false,
+  "standard_statement": "针对理想L9与问界M9的智能座舱产品力，开展同口径横向比较，以提炼可指导我方车机交互方案落地设计的能力差异与取舍。",
+  "targets": [
+    {"object_category": "产品类", "object_dimension": "产品能力", "purpose": "比较", "focus": "理想L9 vs 问界M9 智能座舱产品力中，对我方车机交互设计有借鉴价值的能力维度差异"}
+  ],
+  "constraints": {"subjects": ["理想L9", "问界M9"], "time_range": null, "geography": "中国", "other": ["聚焦智能座舱/车机交互"]},
+  "scope_alignment": {"primary": "product", "serves": "design", "orientation_note": "以产品力比较为分析落点，但一切取向服务于我方车机交互方案的落地设计；未外扩到整车评测或商业模式分析"},
+  "clarifying_questions": [],
+  "reasoning": "对象=智能座舱归入产品能力；双主体明确且为'对比'，目的=比较；地域默认中国；serves=design 故 focus 朝设计借鉴取向收束。"
+}

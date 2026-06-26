@@ -1,0 +1,29 @@
+{
+  "req_id": "r0007",
+  "qid": "q1",
+  "channel": "exa",
+  "op": "search",
+  "backend": "mcporter",
+  "cmd": "mcporter call exa search '理想L9 问界M9 座舱 芯片 屏幕 参数'",
+  "query": "理想L9 问界M9 座舱 芯片 屏幕 参数",
+  "fetched_at": "2026-06-25T21:36:33+08:00",
+  "raw": [
+    {
+      "title": "理想L9/问界M9官方座舱参数",
+      "url": "https://official/spec",
+      "snippet": "骁龙8295，24G内存，三屏",
+      "date": "2025-09-01"
+    }
+  ],
+  "filter": {
+    "candidates": [
+      {
+        "url": "https://official/spec",
+        "direction_pass": true,
+        "quality_tier": "高",
+        "selected_for_read": true,
+        "reason": "官方一手参数页"
+      }
+    ]
+  }
+}

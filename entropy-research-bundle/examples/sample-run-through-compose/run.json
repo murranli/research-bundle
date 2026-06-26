@@ -1,0 +1,85 @@
+{
+  "run_id": "20260625-182141-cbaf",
+  "schema_version": "2.0",
+  "created_at": "2026-06-25T18:21:41+08:00",
+  "updated_at": "2026-06-25T22:10:28+08:00",
+  "original_request": "对比理想L9和问界M9的智能座舱产品力，用来指导我们自己车机交互方案的设计",
+  "scope": {
+    "primary": "product",
+    "serves": "design",
+    "note": "证据要能指导我方车机交互方案的落地设计"
+  },
+  "entry_stage": "intent",
+  "current_stage": "render",
+  "language": "zh",
+  "stage_status": {
+    "intent": "done",
+    "decompose": "done",
+    "strategy": "done",
+    "retrieval": "done",
+    "audit": "done",
+    "compose": "done",
+    "render": "pending",
+    "deliver": "pending"
+  },
+  "artifacts": {
+    "intent": "00_intent.json",
+    "questions": "01_questions.json",
+    "strategy": "02_strategy.json",
+    "retrieval_dir": null,
+    "evidence": "04_evidence.json",
+    "outline": "05_outline.json",
+    "report_html": null
+  },
+  "audit": {
+    "round": 1,
+    "max_rounds": 3,
+    "verdict": "sufficient_with_gaps",
+    "open_gaps": [
+      {
+        "qid": "q3",
+        "gap": "缺跨屏流转可量化指标与权威佐证",
+        "suggest_channels": [
+          "youtube",
+          "exa"
+        ]
+      }
+    ],
+    "next_strategy_seed": [
+      {
+        "qid": "q3",
+        "need": "跨屏流转延迟/成功率 + 官方或权威二手",
+        "try_channels": [
+          "youtube",
+          "exa"
+        ]
+      }
+    ]
+  },
+  "budget": {
+    "max_retrievals": 20,
+    "retrievals_used": 8,
+    "max_sources_per_dimension": 2,
+    "stop_reason": null
+  },
+  "channels": {
+    "snapshot_at": "2026-06-25T19:08:06+08:00",
+    "available": [
+      "bilibili",
+      "exa",
+      "github",
+      "jina",
+      "reddit",
+      "rss",
+      "twitter",
+      "v2ex",
+      "xiaohongshu",
+      "xueqiu",
+      "youtube"
+    ],
+    "unavailable": [
+      "linkedin",
+      "xiaoyuzhou"
+    ]
+  }
+}

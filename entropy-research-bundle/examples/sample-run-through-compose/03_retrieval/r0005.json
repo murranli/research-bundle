@@ -1,0 +1,29 @@
+{
+  "req_id": "r0005",
+  "qid": "q3",
+  "channel": "bilibili",
+  "op": "search",
+  "backend": "OpenCLI",
+  "cmd": "opencli bilibili search '理想L9 问界M9 多屏 跨屏 拆解'",
+  "query": "理想L9 问界M9 多屏 跨屏 拆解",
+  "fetched_at": "2026-06-25T21:36:33+08:00",
+  "raw": [
+    {
+      "title": "理想L9五屏跨屏流转拆解",
+      "url": "https://bili/v/ddd",
+      "snippet": "副驾屏可独立投屏，HUD分担导航",
+      "date": "2025-10-01"
+    }
+  ],
+  "filter": {
+    "candidates": [
+      {
+        "url": "https://bili/v/ddd",
+        "direction_pass": true,
+        "quality_tier": "高",
+        "selected_for_read": true,
+        "reason": "拆解视频含跨屏流转完整路径"
+      }
+    ]
+  }
+}

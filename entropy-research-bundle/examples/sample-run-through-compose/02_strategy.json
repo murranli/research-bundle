@@ -1,0 +1,243 @@
+{
+  "round": 1,
+  "global_scope": {
+    "time_range": "近一年半（约 2025-01 至今，以当前日期 2026-06 为基准）",
+    "geography": "中国大陆",
+    "reasoning": "上游未指定时间，取默认新鲜度倾向以聚焦在售车型的最新座舱表现；地域据 intent 约束取中国。"
+  },
+  "selection": {
+    "limit": 3,
+    "total_candidates": 5,
+    "selected": [
+      {
+        "qid": "q2",
+        "relevance_reason": "语音是车机交互核心路径，对'指导交互方案设计'的下游目的贡献最高。"
+      },
+      {
+        "qid": "q3",
+        "relevance_reason": "多屏与跨屏流转直接决定我方交互布局范式，设计借鉴价值最大。"
+      },
+      {
+        "qid": "q1",
+        "relevance_reason": "硬件底座界定设计可行性基线，须先锁定门槛再谈交互。"
+      }
+    ],
+    "dropped": [
+      {
+        "qid": "q4",
+        "drop_reason": "应用生态偏开放策略，离'交互方案设计'较远，本期暂缓。"
+      },
+      {
+        "qid": "q5",
+        "drop_reason": "OTA 迭代节奏属工程节奏，对交互范式直接借鉴有限，本期暂缓。"
+      }
+    ]
+  },
+  "plans": [
+    {
+      "qid": "q2",
+      "sub_question": "两车车内语音助手在可见即可说、多音区识别、连续对话、响应时延上的实测表现各如何？",
+      "dimension": "语音交互",
+      "topic_type": "B",
+      "key_concepts": [
+        "理想L9",
+        "问界M9",
+        "车机语音",
+        "多音区",
+        "连续对话",
+        "响应时延"
+      ],
+      "synonyms_expansion": [
+        "语音助手",
+        "可见即可说",
+        "免唤醒",
+        "全场景语音",
+        "语音交互"
+      ],
+      "scope": "近一年半在售版本，中国大陆",
+      "search_strategies": [
+        "竞品并列搜索",
+        "时间限定搜索",
+        "证伪式"
+      ],
+      "search_queries": [
+        {
+          "type": "宽搜",
+          "query": "理想L9 问界M9 语音助手 对比 实测"
+        },
+        {
+          "type": "精搜+剔噪",
+          "query": "(“理想” OR “问界”) 车机 语音 (多音区 OR 连续对话 OR 响应) 2025 -招聘"
+        },
+        {
+          "type": "证伪式",
+          "query": "(理想 OR 问界) 车机语音 (难用 OR 听不懂 OR 翻车) 实测 -软文"
+        }
+      ],
+      "channel_plan": [
+        {
+          "channel": "xiaohongshu",
+          "op": "search",
+          "credibility": "社群",
+          "fit_reason": "图文测评高密度，能看到真实车主对语音可用性的第一手体验",
+          "query": "理想L9 问界M9 车机语音 实测",
+          "cmd_hint": "opencli xiaohongshu search '理想L9 问界M9 车机语音 实测'"
+        },
+        {
+          "channel": "bilibili",
+          "op": "search",
+          "credibility": "社群",
+          "fit_reason": "对比类长视频常含语音功能的实测演示与响应时延的直观呈现",
+          "query": "理想L9 问界M9 语音 对比 实测",
+          "cmd_hint": "opencli bilibili search '理想L9 问界M9 语音 对比 实测'"
+        },
+        {
+          "channel": "exa",
+          "op": "search",
+          "credibility": "二手",
+          "fit_reason": "语义搜索聚合跨站专业实测文章，补齐结构化对比口径",
+          "query": "理想L9 问界M9 车机语音助手 实测对比 2025",
+          "cmd_hint": "mcporter call exa search '理想L9 问界M9 车机语音助手 实测对比'"
+        }
+      ],
+      "serves_orientation": "优先取可复用于交互设计的实测细节（唤醒方式、音区分工、时延数字），而非营销话术，用于确定我方语音交互范式。"
+    },
+    {
+      "qid": "q3",
+      "sub_question": "两车在仪表/中控/副驾/HUD 的分工与跨屏流转设计上分别采用了什么方案？",
+      "dimension": "多屏与显示交互",
+      "topic_type": "B",
+      "key_concepts": [
+        "理想L9",
+        "问界M9",
+        "多屏",
+        "副驾屏",
+        "HUD",
+        "跨屏流转"
+      ],
+      "synonyms_expansion": [
+        "三联屏",
+        "五屏三联",
+        "投屏",
+        "屏幕分工",
+        "Flow流转"
+      ],
+      "scope": "近一年半在售版本，中国大陆",
+      "search_strategies": [
+        "竞品并列搜索",
+        "精搜",
+        "证伪式"
+      ],
+      "search_queries": [
+        {
+          "type": "宽搜",
+          "query": "理想L9 问界M9 多屏 跨屏 交互 设计"
+        },
+        {
+          "type": "精搜+剔噪",
+          "query": "(“理想L9” OR “问界M9”) (副驾屏 OR HUD OR 跨屏流转) 2025 -二手"
+        },
+        {
+          "type": "证伪式",
+          "query": "(理想 OR 问界) 多屏 (鸡肋 OR 不实用 OR 分心) 评价 -广告"
+        }
+      ],
+      "channel_plan": [
+        {
+          "channel": "xiaohongshu",
+          "op": "search",
+          "credibility": "社群",
+          "fit_reason": "实拍图直观呈现各屏布局与副驾屏/HUD 的真实使用场景",
+          "query": "理想L9 问界M9 副驾屏 HUD 实拍",
+          "cmd_hint": "opencli xiaohongshu search '理想L9 问界M9 副驾屏 HUD 实拍'"
+        },
+        {
+          "channel": "bilibili",
+          "op": "search",
+          "credibility": "社群",
+          "fit_reason": "座舱拆解视频能完整展示跨屏流转的交互路径",
+          "query": "理想L9 问界M9 多屏 跨屏 拆解",
+          "cmd_hint": "opencli bilibili search '理想L9 问界M9 多屏 跨屏 拆解'"
+        },
+        {
+          "channel": "exa",
+          "op": "search",
+          "credibility": "二手",
+          "fit_reason": "找深度拆解长文，获取屏幕分工的设计意图描述",
+          "query": "理想L9 问界M9 多屏交互 跨屏流转 方案 2025",
+          "cmd_hint": "mcporter call exa search '理想L9 问界M9 多屏交互 跨屏流转 方案'"
+        }
+      ],
+      "serves_orientation": "聚焦各屏职责划分与跨屏流转的具体范式，提炼可直接借鉴到我方多屏布局设计的模式与反模式。"
+    },
+    {
+      "qid": "q1",
+      "sub_question": "理想L9与问界M9智能座舱的主控芯片算力、运行内存与屏幕数量/尺寸/分辨率分别是多少？",
+      "dimension": "硬件底座（芯片/内存/屏幕）",
+      "topic_type": "B",
+      "key_concepts": [
+        "理想L9",
+        "问界M9",
+        "座舱芯片",
+        "算力",
+        "屏幕",
+        "分辨率"
+      ],
+      "synonyms_expansion": [
+        "8295",
+        "麒麟座舱",
+        "运行内存",
+        "中控屏",
+        "副驾屏",
+        "仪表屏"
+      ],
+      "scope": "近一年半在售版本，中国大陆",
+      "search_strategies": [
+        "精搜",
+        "竞品并列搜索",
+        "证伪式"
+      ],
+      "search_queries": [
+        {
+          "type": "宽搜",
+          "query": "理想L9 问界M9 座舱 芯片 屏幕 配置 对比"
+        },
+        {
+          "type": "精搜+剔噪",
+          "query": "(“理想L9” OR “问界M9”) 座舱 (芯片 OR 算力 OR 屏幕) 2025 -二手 -租赁"
+        },
+        {
+          "type": "证伪式",
+          "query": "(理想L9 OR 问界M9) 座舱 (卡顿 OR 缩水 OR 虚标) 实测 -广告"
+        }
+      ],
+      "channel_plan": [
+        {
+          "channel": "exa",
+          "op": "search",
+          "credibility": "二手",
+          "fit_reason": "语义搜索定位官方参数页与权威配置汇总，适合取准确数值",
+          "query": "理想L9 问界M9 座舱 芯片 屏幕 参数 官方",
+          "cmd_hint": "mcporter call exa search '理想L9 问界M9 座舱 芯片 屏幕 参数'"
+        },
+        {
+          "channel": "jina",
+          "op": "read",
+          "credibility": "一手",
+          "fit_reason": "直接读官方参数页正文，拿到芯片/内存/屏幕的一手规格",
+          "query": "<exa 召回的官方参数页 URL>",
+          "cmd_hint": "curl https://r.jina.ai/<官方参数页URL>"
+        },
+        {
+          "channel": "xiaohongshu",
+          "op": "search",
+          "credibility": "社群",
+          "fit_reason": "实拍配置图交叉印证真实在售配置，防参数表与实车不符",
+          "query": "理想L9 问界M9 座舱 配置 实拍",
+          "cmd_hint": "opencli xiaohongshu search '理想L9 问界M9 座舱 配置 实拍'"
+        }
+      ],
+      "serves_orientation": "用官方参数锁定硬件基线门槛（算力/内存/屏数），确保我方设计目标不低于主流；社群实拍交叉印证真实可用配置。"
+    }
+  ]
+}

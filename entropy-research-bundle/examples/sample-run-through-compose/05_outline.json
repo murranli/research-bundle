@@ -1,0 +1,31 @@
+{
+  "report_title": "理想L9 与 问界M9 智能座舱对比：给我方车机交互设计的借鉴",
+  "thesis": "两车座舱的真正差异不在算力或语音快慢，而在屏幕布局策略与语音容错路径——这两点才是我方交互设计该重点取舍的地方。",
+  "report_type": "对比",
+  "sections": [
+    {
+      "sid": "s1",
+      "claim": "语音时延差不足0.05秒，体验分水岭不在'快慢'而在容错与连续对话",
+      "supports": [
+        {"point": "标准化测试下理想唤醒约0.48s、问界约0.52s，差异微小，用户几乎无感", "evidence_refs": ["e1"], "type": "fact", "confidence": "high"},
+        {"point": "多音区识别两车均>95%，差异体现在连续对话轮次（问界略优），即多轮容错而非单次速度", "evidence_refs": ["e2"], "type": "fact", "confidence": "medium"}
+      ],
+      "covers_qids": ["q2"],
+      "design_implication": "我方语音交互不必死磕极限唤醒时延，应把资源投在多轮连续对话的容错与上下文保持上。"
+    },
+    {
+      "sid": "s2",
+      "claim": "同芯片(8295P)之下，屏数与布局才是座舱差异的真正变量",
+      "supports": [
+        {"point": "两车主控均为骁龙8295P，算力同代，硬件性能不构成区分", "evidence_refs": ["e3"], "type": "fact", "confidence": "high"},
+        {"point": "差异落在屏的数量与布局：理想5屏铺满座舱，问界三联屏+HUD，指向不同的注意力分配哲学", "evidence_refs": ["e3"], "type": "inference", "confidence": "medium"}
+      ],
+      "covers_qids": ["q1"],
+      "design_implication": "我方设计的差异化空间在屏数与布局策略，而非算力堆叠；需先定'注意力分配'哲学再定屏方案。"
+    }
+  ],
+  "limitations": [
+    {"gap": "多屏跨屏流转的可量化指标（延迟/成功率）与官方/权威佐证缺失，目前仅单一社群描述", "affected_qids": ["q3"], "note": "留白待补：第2轮拟换 youtube/exa 补证后再就'跨屏流转设计'下结论，本轮不强行成章。"}
+  ],
+  "scope_fidelity": "大纲围绕'指导我方车机交互设计'，已就语音与硬件两维给出设计启示；多屏维度因证据不足显式留白，未将原始诉求收缩为单车评测。"
+}

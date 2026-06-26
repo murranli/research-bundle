@@ -1,0 +1,16 @@
+{
+  "req_id": "r0006",
+  "qid": "q3",
+  "channel": "bilibili",
+  "op": "read",
+  "backend": "yt-dlp",
+  "cmd": "<字幕提取>",
+  "query": "https://bili/v/ddd",
+  "fetched_at": "2026-06-25T21:36:33+08:00",
+  "raw": "理想：仪表+中控+副驾三屏，副驾可独立看视频并投中控；HUD承担导航与车速。问界：类似但增后排屏。\n",
+  "source_meta": {
+    "url": "https://bili/v/ddd",
+    "date": "2025-10-01",
+    "source_type": "社群"
+  }
+}

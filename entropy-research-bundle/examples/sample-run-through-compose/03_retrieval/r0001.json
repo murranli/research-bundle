@@ -1,0 +1,53 @@
+{
+  "req_id": "r0001",
+  "qid": "q2",
+  "channel": "xiaohongshu",
+  "op": "search",
+  "backend": "OpenCLI",
+  "cmd": "opencli xiaohongshu search '理想L9 问界M9 车机语音 实测'",
+  "query": "理想L9 问界M9 车机语音 实测",
+  "fetched_at": "2026-06-25T21:36:33+08:00",
+  "raw": [
+    {
+      "title": "理想L9 vs 问界M9 车机语音实测，谁更听得懂人话",
+      "url": "https://xhs/note/aaa",
+      "snippet": "实测多音区+连续对话，理想响应更快约0.3s",
+      "date": "2025-11-02"
+    },
+    {
+      "title": "问界M9语音助手用一个月体验",
+      "url": "https://xhs/note/bbb",
+      "snippet": "小艺连续对话流畅，偶有误唤醒",
+      "date": "2026-01-15"
+    },
+    {
+      "title": "【广告】XX车膜限时5折",
+      "url": "https://xhs/note/ccc",
+      "snippet": "夏季车膜促销",
+      "date": "2026-05-01"
+    }
+  ],
+  "filter": {
+    "candidates": [
+      {
+        "url": "https://xhs/note/aaa",
+        "direction_pass": true,
+        "quality_tier": "高",
+        "selected_for_read": true,
+        "reason": "含具体时延数字，社群一手体验"
+      },
+      {
+        "url": "https://xhs/note/bbb",
+        "direction_pass": true,
+        "quality_tier": "中",
+        "selected_for_read": false,
+        "reason": "体验向但缺对比数字"
+      },
+      {
+        "url": "https://xhs/note/ccc",
+        "direction_pass": false,
+        "drop_reason": "营销软文跑题"
+      }
+    ]
+  }
+}

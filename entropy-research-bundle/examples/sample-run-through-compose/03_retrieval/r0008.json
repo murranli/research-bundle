@@ -1,0 +1,16 @@
+{
+  "req_id": "r0008",
+  "qid": "q1",
+  "channel": "jina",
+  "op": "read",
+  "backend": "Jina Reader",
+  "cmd": "curl https://r.jina.ai/.../spec",
+  "query": "https://official/spec",
+  "fetched_at": "2026-06-25T21:36:33+08:00",
+  "raw": "理想L9：高通骁龙8295P，24GB内存，5屏（仪表/中控/副驾/双后排）。问界M9：8295P，鸿蒙座舱，三联屏+HUD。\n",
+  "source_meta": {
+    "url": "https://official/spec",
+    "date": "2025-09-01",
+    "source_type": "一手"
+  }
+}
